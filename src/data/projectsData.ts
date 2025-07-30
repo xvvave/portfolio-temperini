@@ -1,0 +1,38 @@
+export const projectsData = [
+  {
+    id: 2,
+    slug: "levelup",
+    image: "/images/levelup-logo.png",
+    title: "Level Up",
+    subtitle: "Web & Content Redesign",
+    description: "Case Study",
+    tags: ["Design Research", "System Design", "User Research", "Content Design", "UX Design"],
+  },
+  {
+    id: 3,
+    slug: "vorterix",
+    image: "/images/vorterix-logo.png",
+    title: "Vorterix",
+    subtitle: "Landing Page",
+    description: "Case Study",
+    tags: ["Front-end Development", "Web Design", "User Research", "UI Design", "UX Design"],
+  },
+  {
+    id: 1,
+    slug: "gloryfit",
+    image: "/images/gloryfit-logo.png",
+    title: "Glory Fit",
+    subtitle: "App Redesign",
+    description: "Case Study",
+    tags: ["Design Research", "Android Prototype", "User Research", "UI Design", "UX Design"],
+  },
+  {
+    id: 4,
+    slug: "rectofinal",
+    image: "/images/rectofinal-logo.png",
+    title: "Recto Final",
+    subtitle: "Videojuego físico-digital",
+    description: "Experiencia Interactiva",
+    tags: ["Unity", "Game Development", "UI Design", "Set Building", "Storytelling"],
+  },
+]; 
