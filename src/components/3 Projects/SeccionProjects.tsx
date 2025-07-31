@@ -1,5 +1,4 @@
 import ProjectCard from "./Project-card"
-// import RevealOnScroll from "../fxscripts/reveal-on-scroll"
 import { projectsData } from "@/data/projectsData"
 
 export default function Projects() {

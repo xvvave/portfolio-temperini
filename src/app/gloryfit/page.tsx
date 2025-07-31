@@ -24,7 +24,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://temperini.vercel.app/images/gloryfit-logo.png",
+        url: "https://temperini.vercel.app/images/gloryfit-logo.webp",
         width: 800,
         height: 600,
         alt: "Logo de GloryFit",
@@ -36,7 +36,7 @@ export const metadata = {
     title: "GloryFit | App de entrenamiento personalizado | Lautaro R. Temperini",
     description:
       "Diseño UX/UI para una app de entrenamiento inteligente. Rutinas adaptadas, onboarding progresivo y decisiones basadas en datos reales de usuarios.",
-    images: ["https://temperini.vercel.app/images/gloryfit-logo.png"],
+    images: ["https://temperini.vercel.app/images/gloryfit-logo.webp"],
   },
 };
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import RevealOnScroll from "../../components/fxscripts/reveal-on-scroll"
 import OptimizedImage from "../../components/optimized-image"
 import { playgroundItems } from "@/data/playgroundItems"
@@ -9,9 +9,29 @@ import GlareHover from "../../components/fxscripts/GlareHover"
 
 export default function PlaygroundGrid() {
   const [activeFilter, setActiveFilter] = useState("all")
+  const [cascadeTriggered, setCascadeTriggered] = useState(false)
+  const [cascadeStartTime, setCascadeStartTime] = useState<number | null>(null)
 
   const filteredItems =
     activeFilter === "all" ? playgroundItems : playgroundItems.filter((item) => item.type === activeFilter)
+
+  // Función para manejar cuando se activa la primera instancia
+  const handleFirstReveal = () => {
+    if (!cascadeTriggered) {
+      setCascadeTriggered(true)
+      setCascadeStartTime(Date.now())
+    }
+  }
+
+  // Función para calcular el delay de cascada
+  const getCascadeDelay = (index: number) => {
+    if (!cascadeTriggered) {
+      return index * 100 // Delay original solo para la primera
+    }
+    
+    // Una vez activada la cascada, todas las demás aparecen en secuencia
+    return index * 150 // Delay entre elementos en cascada
+  }
 
   return (
     <section
@@ -64,7 +84,13 @@ export default function PlaygroundGrid() {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
           {filteredItems.map((item, index) => (
-            <RevealOnScroll key={item.id} delay={index * 100}>
+            <CascadeReveal 
+              key={item.id} 
+              index={index}
+              cascadeTriggered={cascadeTriggered}
+              onFirstReveal={handleFirstReveal}
+              getCascadeDelay={getCascadeDelay}
+            >
               <GlareHover
                 className="group bg-[#0D0D0D] border border-[#9C96A4] rounded-2xl transition-all duration-300 hover:border-[#8900C3] hover:shadow-[0px_8px_35px_rgba(115,0,165,0.18)] hover:scale-[1.005] cursor-pointer"
                 glareColor="#f2f2f2"
@@ -113,11 +139,73 @@ export default function PlaygroundGrid() {
                   </div>
                 </div>
               </GlareHover>
-            </RevealOnScroll>
+            </CascadeReveal>
           ))}
         </div>
 
       </div>
     </section>
+  )
+}
+
+// Componente personalizado para manejar la cascada
+interface CascadeRevealProps {
+  children: React.ReactNode
+  index: number
+  cascadeTriggered: boolean
+  onFirstReveal: () => void
+  getCascadeDelay: (index: number) => number
+}
+
+function CascadeReveal({ children, index, cascadeTriggered, onFirstReveal, getCascadeDelay }: CascadeRevealProps) {
+  const [isVisible, setIsVisible] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const currentRef = ref.current
+    
+    // Si la cascada está activada, mostrar inmediatamente con delay
+    if (cascadeTriggered) {
+      const delay = getCascadeDelay(index)
+      setTimeout(() => {
+        setIsVisible(true)
+      }, delay)
+      return
+    }
+
+    // Solo observar la primera instancia para activar la cascada
+    if (index === 0) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            onFirstReveal()
+            setTimeout(() => {
+              setIsVisible(true)
+            }, getCascadeDelay(index))
+            observer.unobserve(entry.target)
+          }
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        },
+      )
+
+      if (currentRef) {
+        observer.observe(currentRef)
+      }
+
+      return () => {
+        if (currentRef) {
+          observer.unobserve(currentRef)
+        }
+      }
+    }
+  }, [index, cascadeTriggered, onFirstReveal, getCascadeDelay])
+
+  return (
+    <div ref={ref} className={`reveal ${isVisible ? "revealed" : ""}`} aria-hidden="true">
+      {children}
+    </div>
   )
 }

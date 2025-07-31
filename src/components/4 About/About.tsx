@@ -46,7 +46,7 @@ export default function About() {
               <div className="block md:hidden w-full my-6 flex justify-center">
                 <div className="w-full max-w-xs sm:max-w-sm">
                   <TiltedCard
-                    imageSrc="/images/foto-lautaro.png"
+                    imageSrc="/images/foto-lautaro.webp"
                     altText="Lautaro R. Temperini - Diseñador Multimedia"
                     captionText=""
                     aspectRatio={1}
@@ -70,7 +70,7 @@ export default function About() {
           <div className="w-full md:w-1/2 xl:w-[45%] flex-shrink-0 flex justify-center md:justify-end -mt-24 hidden md:block">
             <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl">
               <TiltedCard
-                imageSrc="/images/foto-lautaro.png"
+                imageSrc="/images/foto-lautaro.webp"
                 altText="Lautaro R. Temperini - Diseñador Multimedia"
                 captionText=""
                 aspectRatio={1}

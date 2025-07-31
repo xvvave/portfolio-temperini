@@ -127,6 +127,8 @@ export default function Navbar() {
       {/* Desktop Navigation Links - absolutely centered */}
       <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="flex items-center gap-8 lg:gap-16">
+          {/* Temporarily commented out - Projects and Playground not ready yet */}
+          {/* 
           <a
             href="#projects"
             onClick={handleProjectsClick}
@@ -160,6 +162,7 @@ export default function Navbar() {
               <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#666973] rounded-full" />
             )}
           </Link>
+          */}
         </div>
       </div>
 
@@ -229,6 +232,8 @@ export default function Navbar() {
           className="absolute top-full left-0 w-full bg-[#0D0D0D]/95 backdrop-blur-sm border-t border-[#333]/50 md:hidden"
         >
           <div className="flex flex-col p-4 space-y-4">
+            {/* Temporarily commented out - Projects and Playground not ready yet */}
+            {/* 
             <a
               href="#projects"
               onClick={e => { handleProjectsClick(e); setMobileMenuOpen(false); }}
@@ -242,9 +247,10 @@ export default function Navbar() {
               className="fluid-text-base font-extrabold text-[#F2F2F2] hover:text-[#A6A6A6] transition-colors py-2 cursor-pointer"
               style={{ fontFamily: "var(--font-inter)" }}
               onClick={() => setMobileMenuOpen(false)}
-            >S
+            >
               Playground
             </Link>
+            */}
             {/* Mobile Contact Button */}
             {pathname !== '/contact' && (
               <Link

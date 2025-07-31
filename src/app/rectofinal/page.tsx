@@ -24,7 +24,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://temperini.vercel.app/images/rectofinal-logo.png",
+        url: "https://temperini.vercel.app/images/rectofinal-logo.webp",
         width: 800,
         height: 600,
         alt: "Logo de Recto Final",
@@ -36,7 +36,7 @@ export const metadata = {
     title: "Recto Final | Videojuego físico-digital | Lautaro R. Temperini",
     description:
       "Videojuego físico-digital donde la única salida es por el final. Instalación interactiva con Unity 2D y hardware modificado.",
-    images: ["https://temperini.vercel.app/images/rectofinal-logo.png"],
+    images: ["https://temperini.vercel.app/images/rectofinal-logo.webp"],
   },
 };
 
@@ -139,7 +139,7 @@ export default function RectoFinalPage() {
 
         {/* Placeholder para imagen de instalación */}
         <FullImage
-          src="/images/placeholder-instalacion.jpg"
+          src="/images/Placeholder.webp"
           alt="Instalación completa con público"
           className="max-w-[60vw] w-full h-auto mx-auto"
           shadow
@@ -147,7 +147,7 @@ export default function RectoFinalPage() {
 
         {/* Placeholder para moodboard */}
         <FullImage
-          src="/images/placeholder-moodboard.jpg"
+          src="/images/Placeholder.webp"
           alt="Moodboard visual — paleta ácida, texturas orgánicas, tipografía retro-pirata"
           className="max-w-[60vw] w-full h-auto mx-auto"
           shadow
@@ -185,7 +185,7 @@ export default function RectoFinalPage() {
 
         {/* Placeholder para proceso técnico */}
         <FullImage
-          src="/images/placeholder-proceso-tecnico.jpg"
+          src="/images/Placeholder.webp"
           alt="Proceso técnico — soldadura, volante, sensores"
           className="max-w-[60vw] w-full h-auto mx-auto"
           shadow
@@ -224,7 +224,7 @@ export default function RectoFinalPage() {
         <TwoColumn
           left={
             <FullImage
-              src="/images/placeholder-hud-outro.jpg"
+              src="/images/Placeholder.webp"
               alt="Captura de HUD, outro, golpe físico"
               className="w-full h-auto"
               border={false}
@@ -234,7 +234,7 @@ export default function RectoFinalPage() {
           }
           right={
             <FullImage
-              src="/images/placeholder-volante-recalibrado.jpg"
+              src="/images/Placeholder.webp"
               alt="Foto del volante siendo recalibrado"
               className="w-full h-auto"
               border={false}
@@ -248,7 +248,7 @@ export default function RectoFinalPage() {
         <TwoColumn
           left={
             <FullImage
-              src="/images/placeholder-instalacion-publico.jpg"
+              src="/images/Placeholder.webp"
               alt="Instalación funcionando con público diverso"
               className="w-full h-auto"
               border={false}
@@ -258,7 +258,7 @@ export default function RectoFinalPage() {
           }
           right={
             <FullImage
-              src="/images/placeholder-reparacion-vivo.jpg"
+              src="/images/Placeholder.webp"
               alt="Momento de reparación en vivo"
               className="w-full h-auto"
               border={false}

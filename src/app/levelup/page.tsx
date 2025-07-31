@@ -24,7 +24,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://temperini.vercel.app/images/levelup-logo.png",
+        url: "https://temperini.vercel.app/images/levelup-logo.webp",
         width: 800,
         height: 600,
         alt: "Logo de LevelUp",
@@ -36,7 +36,7 @@ export const metadata = {
     title: "LevelUp | Rediseño editorial gamer | Lautaro R. Temperini",
     description:
       "Rediseño editorial con personalización y geosegmentación para el público gamer de Latinoamérica.",
-    images: ["https://temperini.vercel.app/images/levelup-logo.png"],
+    images: ["https://temperini.vercel.app/images/levelup-logo.webp"],
   },
 };
 

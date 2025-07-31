@@ -116,7 +116,7 @@ export default function TiltedCard({
           }}
         >
         <Image
-          src={imageSrc || "/images/foto-lautaro.png"}
+          src={imageSrc || "/images/foto-lautaro.webp"}
           alt={altText}
           fill
           className="object-cover rounded-[15px]"

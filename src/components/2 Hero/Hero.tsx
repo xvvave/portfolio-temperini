@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import RevealOnScroll from "../fxscripts/reveal-on-scroll"
 import Image from "next/image"
